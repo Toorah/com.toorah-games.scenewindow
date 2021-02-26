@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="scenewindow.uss" />
+    <uie:Toolbar>
+        <uie:ToolbarSearchField focusable="true" name="search" style="flex-shrink: 1; width: auto;" />
+    </uie:Toolbar>
+    <ui:VisualElement name="list" class="scene-view" />
+</ui:UXML>

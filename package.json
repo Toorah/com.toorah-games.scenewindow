@@ -1,0 +1,12 @@
+{
+    "name": "com.toorah-games.scenewindow",
+    "version": "1.0.0",
+    "displayName": "Scene Overview Window",
+    "description": "Adds a Scene overview Window with Searchbar and icons.",
+    "unity": "2020.2",
+    "author": {
+        "name": "Atahan Tuğra Kiltan",
+        "email": "",
+        "url": ""
+    }
+}
