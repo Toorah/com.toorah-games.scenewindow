@@ -14,7 +14,7 @@
     -unity-background-scale-mode: stretch-to-fill;
     width: 80px;
     height: 80px;
-    -unity-background-image-tint-color: rgba(217, 217, 217, 255);
+    -unity-background-image-tint-color: rgb(217, 217, 217);
 }
 
 .scene-view {
@@ -24,10 +24,10 @@
 }
 
 .scene-btn:hover {
-    border-left-color: rgba(255, 98, 0, 255);
-    border-right-color: rgba(255, 98, 0, 255);
-    border-top-color: rgba(255, 98, 0, 255);
-    border-bottom-color: rgba(255, 98, 0, 255);
+    border-left-color: rgb(255, 98, 0);
+    border-right-color: rgb(255, 98, 0);
+    border-top-color: rgb(255, 98, 0);
+    border-bottom-color: rgb(255, 98, 0);
 }
 
 .scene-btn:active {
@@ -39,4 +39,11 @@
     border-right-width: 2px;
     border-top-width: 2px;
     border-bottom-width: 2px;
+}
+
+.msg {
+    flex-grow: 1;
+    flex-wrap: wrap;
+    flex-direction: row;
+    white-space: normal;
 }

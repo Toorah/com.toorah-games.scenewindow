@@ -29,25 +29,34 @@ namespace AOTEditor.Tools.SceneWindow
             var search = rootVisualElement.Q<ToolbarSearchField>("search");
             search.RegisterValueChangedCallback(Search);
 
-            foreach(var scene in scenes.scenes)
-            {
-                var btn = new Button();
-                btn.AddToClassList("scene-btn");
-                btn.text = scene.name;
-                btn.tooltip = $"Load Scene: \"{scene.name}\"";
-                buttons.Add(scene.name, btn);
-                if (scene.screenshot)
+            if (scenes)
+                foreach (var scene in scenes.scenes)
                 {
-                    btn.style.backgroundImage = new StyleBackground(scene.screenshot);
-                }
-                btn.clicked += () => {
-                    if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+                    var btn = new Button();
+                    btn.AddToClassList("scene-btn");
+                    btn.text = scene.name;
+                    btn.tooltip = $"Load Scene: \"{scene.name}\"";
+                    buttons.Add(scene.name, btn);
+                    if (scene.screenshot)
                     {
-                        EditorSceneManager.OpenScene(AssetDatabase.GetAssetPath(scene.scene));
+                        btn.style.backgroundImage = new StyleBackground(scene.screenshot);
                     }
-                };
-                container.Add(btn);
+                    btn.clicked += () =>
+                    {
+                        if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+                        {
+                            EditorSceneManager.OpenScene(AssetDatabase.GetAssetPath(scene.scene));
+                        }
+                    };
+                    container.Add(btn);
 
+                }
+            else
+            {
+                var lbl = (new Label("You must create a Scene Container first! Go to: \n\"Assets/Create/Scene Overview/Create Container\"\n Make sure you add it to a Resources Folder."));
+                lbl.AddToClassList("msg");
+
+                container.Add(lbl);
             }
         }
 
